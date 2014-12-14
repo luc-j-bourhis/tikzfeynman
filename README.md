@@ -1,0 +1,42 @@
+## TikZ-Feynman
+
+This is a LaTeX package providing TikZ styles and hooks to typeset Feynman diagrams with an intuitive and easy syntax. For example,
+
+```
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=2cm of v1] (v2);
+
+\coordinate[vertex, above left =of v1] (v1a);
+\coordinate[vertex, below left =of v1] (v1b);
+\coordinate[above left =of v1a, label=left :$e^+$] (ea);
+\coordinate[below left =of v1b, label=left :$e^-$] (eb);
+
+\coordinate[vertex, above right =of v2] (v2a);
+\coordinate[vertex, below right =of v2] (v2b);
+\coordinate[above right =of v2a, label=right :$q$] (fa);
+\coordinate[below right =of v2b, label=right :$\bar{q}$] (fb);
+
+\draw[fermion] (ea) -- (v1a);
+\draw[fermion] (v1a) -- (v1);
+\draw[fermion] (v1) -- (v1b);
+\draw[fermion] (v1b) -- (eb);
+
+\draw[fermion] (fa) -- (v2a);
+\draw[fermion] (v2a) -- (v2);
+\draw[fermion] (v2) -- (v2b);
+\draw[fermion] (v2b) -- (fb);
+
+\draw[photon]  (v1) -- (v2);
+
+\draw[photon] (v1a) to[arcloop, centre=v1] node[midway, left=0.1cm]{$\gamma$} (v1b);
+\draw[gluon]  (v2a) to[arcloop, centre=v2] node[midway, right=0.1cm]{g} (v2b);
+\end{tikzpicture}
+```
+
+produces
+
+![](vertex-corrections.png)
+
+At this early stage this package does not provide any way to tweak the various parameters influencing the way photon or gluon lines look. Moreover, many other lines are not available yet (ghost e.g.). This is really just a proof-of-concept at the moment but it is sufficiently advanced to be useful as demonstrated by the file `examples.tex` which showcases several other non-trivial diagrams: they should typeset exactly as `examples.pdf`.
+

@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{tikzfeynman}
+
+\begin{document}
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=of v1] (v2);
+\coordinate[vertex, right=of v2] (v3);
+\coordinate[vertex, right=of v3] (v4);
+\coordinate[above right=of v4, label=right:$f$] (f1);
+\coordinate[below right=of v4, label=right:$f$] (f2);
+\coordinate[above left =of v1, label=left :$e^+$] (e1);
+\coordinate[below left =of v1, label=left :$e^-$] (e2);
+\draw[fermion] (e1) -- (v1);
+\draw[fermion] (v1) -- (e2);
+\draw[photon] (v1) -- node[midway, above=0.1cm]{$Z$} (v2);
+\draw[photon] (v3) -- node[midway, above=0.1cm]{$Z$} (v4);
+\draw[fermion] (f1) -- (v4);
+\draw[fermion] (v4) -- (f2);
+\draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
+\draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=of v1] (v2);
+\coordinate[vertex, right=of v2] (v3);
+\coordinate[vertex, right=of v3] (v4);
+\coordinate[above right=of v4,label=right:$q$] (f1);
+\coordinate[below right=of v4,label=right:$\bar{q}$] (f2);
+\coordinate[above left =of v1,label=left :$\bar{q}$] (e1);
+\coordinate[below left =of v1,label=left :$q$] (e2);
+\draw[fermion] (e1) -- (v1);
+\draw[fermion] (v1) -- (e2);
+\draw[gluon] (v1) -- (v2);
+\draw[gluon] (v3) -- (v4);
+\draw[fermion] (f1) -- (v4);
+\draw[fermion] (v4) -- (f2);
+\draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
+\draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=of v1] (v2);
+\coordinate[vertex, right=of v2] (v3);
+\coordinate[vertex, right=of v3] (v4);
+\coordinate[above right=of v4,label=right:$q$] (f1);
+\coordinate[below right=of v4,label=right:$\bar{q}$] (f2);
+\coordinate[above left =of v1,label=left :$\bar{q}$] (e1);
+\coordinate[below left =of v1,label=left :$q$] (e2);
+\draw[fermion] (e1) -- (v1);
+\draw[fermion] (v1) -- (e2);
+\draw[gluon] (v1) -- (v2);
+\draw[gluon] (v3) -- (v4);
+\draw[fermion] (f1) -- (v4);
+\draw[fermion] (v4) -- (f2);
+\draw[gluon] (v2) to[semiloop] (v3);
+\draw[gluon] (v3) to[semiloop] (v2);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=2cm of v1] (v2);
+\coordinate[vertex, above right=of v2] (v3);
+\coordinate[vertex, above right=of v3] (v4);
+\coordinate[above right=of v4,label=right:$q$] (f1);
+\coordinate[below right=of v2,label=right:$\bar{q}$] (f2);
+\coordinate[above left =of v1,label=left :$e^+$] (e1);
+\coordinate[below left =of v1,label=left :$e^-$] (e2);
+\draw[fermion] (e1) -- (v1);
+\draw[fermion] (v1) -- (e2);
+\draw[photon]  (v1) -- (v2);
+\draw[fermion] (v3) -- (v2);
+\draw[fermion] (f1) -- (v4);
+\draw[fermion] (v2) -- (f2);
+\draw[gluon] (v3) to[semiloop] (v4);
+\draw[gluon] (v4) to[semiloop] (v3);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=2cm of v1] (v2);
+
+\coordinate[vertex, above left =of v1] (v1a);
+\coordinate[vertex, below left =of v1] (v1b);
+\coordinate[above left =of v1a, label=left :$e^+$] (ea);
+\coordinate[below left =of v1b, label=left :$e^-$] (eb);
+
+\coordinate[vertex, above right =of v2] (v2a);
+\coordinate[vertex, below right =of v2] (v2b);
+\coordinate[above right =of v2a, label=right :$q$] (fa);
+\coordinate[below right =of v2b, label=right :$\bar{q}$] (fb);
+
+\draw[fermion] (ea) -- (v1a);
+\draw[fermion] (v1a) -- (v1);
+\draw[fermion] (v1) -- (v1b);
+\draw[fermion] (v1b) -- (eb);
+
+\draw[fermion] (fa) -- (v2a);
+\draw[fermion] (v2a) -- (v2);
+\draw[fermion] (v2) -- (v2b);
+\draw[fermion] (v2b) -- (fb);
+
+\draw[photon]  (v1) -- (v2);
+
+\draw[photon] (v1a) to[arcloop, centre=v1] node[midway, left=0.1cm]{$\gamma$} (v1b);
+\draw[gluon]  (v2a) to[arcloop, centre=v2] node[midway, right=0.1cm]{g} (v2b);
+\end{tikzpicture}
+
+
+\end{document}

@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{tikzfeynman}[2014/12/14 v0.01 LaTeX package to typeset Feynman diagrams]
+
+\usepackage{tikz}
+    \usetikzlibrary{
+        arrows,
+        calc,
+        decorations.text,
+        decorations.pathmorphing,
+        decorations.markings,
+        positioning,
+        shapes
+    }
+
+    \def\tikzFeynmanArcLoopCenter{}
+    \tikzset{
+      centre/.code = {
+        \def\tikzFeynmanArcLoopCenter{#1}
+      },
+      fermion/.style = {
+        draw = black,
+        postaction = {decorate},
+        decoration = {
+            markings,
+            mark = at position .55 with {\arrow{>}}
+        }
+      },
+      photon/.style = {
+        draw = black,
+        decorate,
+        decoration = {
+          snake,
+          amplitude = 1mm,
+          segment length = 1.5mm
+        }
+      },
+      gluon/.style = {
+        draw = black,
+        decorate,
+        decoration = {
+          coil,
+          aspect = .5,
+          amplitude = 1mm,
+          segment length = 1mm
+        }
+      },
+      vertex/.style = {
+        draw,
+        shape = circle,
+        fill = black,
+        minimum size = 2pt,
+        inner sep = 0pt
+      },
+      semiloop/.style = {to path={
+        let
+          \p1 = ($(\tikztotarget)-(\tikztostart)$),
+          \n1 = {atan2(\y1,\x1)+180},
+          \n2 = {0.5*veclen(\x1,\y1)}
+        in
+          arc[start angle=\n1, delta angle=-180, radius=\n2] \tikztonodes
+      }},
+      arcloop/.style = {to path={
+        let
+          \p1 = ($(\tikztostart)-(\tikzFeynmanArcLoopCenter)$),
+          \p2 = ($(\tikztotarget)-(\tikzFeynmanArcLoopCenter)$),
+          \n1 = {atan2(\y1,\x1)},
+          \n2 = {atan2(\y2,\x2)-\n1},
+          \n3 = {\n2 > 180 ? \n2 - 360 : \n2 < -180 ? 360 + \n2 : \n2},
+          \n4 = {veclen(\x1,\y1)}
+        in
+          arc[start angle=\n1, delta angle=\n3, radius=\n4] \tikztonodes
+      }}
+    }
+
+\endinput
