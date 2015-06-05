@@ -108,15 +108,34 @@
 \draw[gluon]  (v2a) to[arcloop, centre=v2] node[midway, right=0.1cm]{g} (v2b);
 \end{tikzpicture}
 
-\begin{tikzpicture}[node distance=2cm]
+\begin{tikzpicture}[node distance=1.5cm]
 \coordinate[vertex] (v1);
-\coordinate[vertex, right=1.5cm of v1] (v2);
-\coordinate[vertex, right=1.5cm of v2] (v3);
-\coordinate[vertex, right=1.5cm of v3] (v4);
+\coordinate[vertex, right=of v1] (v2);
+\coordinate[vertex, right=of v2] (v3);
+\coordinate[vertex, right=of v3] (v4);
 \draw[ghost] (v1) -- (v2);
 \draw[ghost] (v2) -- (v3);
 \draw[ghost] (v3) -- (v4);
 \draw[gluon] (v2) to[semiloop] (v3);
+\end{tikzpicture}
+
+\vskip 2em
+
+\begin{tikzpicture}[node distance=2cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=of v1] (v2);
+\coordinate[right=1cm of v2] (o);
+\coordinate[vertex, right=1cm of o] (v3);
+\coordinate[vertex, right=of v3] (v4);
+\coordinate[vertex, above=1cm of o] (v5);
+\coordinate[vertex, below=1cm of o] (v6);
+\draw[gluon] (v1) -- (v2);
+\draw[gluon] (v3) -- (v4);
+\draw[ghost] (v2) to[arcloop,centre=o] (v6);
+\draw[ghost] (v6) to[arcloop,centre=o] (v3);
+\draw[ghost] (v3) to[arcloop,centre=o] (v5);
+\draw[ghost] (v5) to[arcloop,centre=o] (v2);
+\draw[gluon] (v5) -- (v6);
 \end{tikzpicture}
 
 

@@ -47,7 +47,12 @@
       ghost/.style = {
         line width=1pt,
         line cap=round,
-        dash pattern=on 0pt off 4\pgflinewidth
+        dash pattern=on 0pt off 4\pgflinewidth,
+        postaction = {decorate},
+        decoration = {
+            markings,
+            mark = at position .55 with {\arrow{>}}
+        }
       },
       vertex/.style = {
         draw,
