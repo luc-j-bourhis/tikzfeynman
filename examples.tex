@@ -108,5 +108,16 @@
 \draw[gluon]  (v2a) to[arcloop, centre=v2] node[midway, right=0.1cm]{g} (v2b);
 \end{tikzpicture}
 
+\begin{tikzpicture}[node distance=2cm]
+\coordinate[vertex] (v1);
+\coordinate[vertex, right=1.5cm of v1] (v2);
+\coordinate[vertex, right=1.5cm of v2] (v3);
+\coordinate[vertex, right=1.5cm of v3] (v4);
+\draw[ghost] (v1) -- (v2);
+\draw[ghost] (v2) -- (v3);
+\draw[ghost] (v3) -- (v4);
+\draw[gluon] (v2) to[semiloop] (v3);
+\end{tikzpicture}
+
 
 \end{document}
