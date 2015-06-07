@@ -138,5 +138,29 @@
 \draw[gluon] (v5) -- (v6);
 \end{tikzpicture}
 
+\newpage
+
+\begin{tikzpicture}[node distance=1.5cm]
+\coordinate[vertex] (g1);
+\coordinate[vertex, below=of g1] (g2);
+\coordinate[vertex, right=of g1] (vgtt1);
+\coordinate[vertex, below=of vgtt1] (vgtt2);
+\draw[gluon] (g1) -- (vgtt1);
+\draw[gluon] (g2) -- (vgtt2);
+\draw[fermion] (vgtt1) -- (vgtt2);
+\draw[fermion] (vgtt2) -- +(30:1.5cm) coordinate[vertex] (vtth1);
+\draw[fermion] (vtth1) -- (vgtt1);
+
+\draw[scalar] (vtth1) -- node[midway, above=0.1cm]{$H^0$} +(0:2) coordinate[vertex] (vtth2);
+
+\draw[fermion] (vtth2) -- +(-30:1.5cm) coordinate[vertex] (vttgam1);
+\coordinate[vertex, above=of vttgam1] (vttgam2);
+\draw[fermion] (vttgam1) -- (vttgam2);
+\draw[fermion] (vttgam2) -- (vtth2);
+\coordinate[vertex, right=of vttgam1] (gam1);
+\coordinate[vertex, right=of vttgam2] (gam2);
+\draw[photon] (vttgam1) -- (gam1);
+\draw[photon] (vttgam2) -- (gam2);
+\end{tikzpicture}
 
 \end{document}
