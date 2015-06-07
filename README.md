@@ -38,6 +38,6 @@ produces
 
 ![](vertex-corrections.png)
 
-At this early stage this package does not provide all the types of propagators in common use (ghost e.g.). It is sufficiently advanced a proof-of-concept to be useful as demonstrated by the file `examples.tex` which showcases several other non-trivial diagrams: they should typeset exactly as `examples.pdf`. However I need to provide some documentation since, at the moment, changing the look of photon or gluon propagators require to know the TikZ implementation and then to dig the relevant information from TikZ documentation.
+It is sufficiently advanced a proof-of-concept to be useful as demonstrated by the file `examples.tex` which showcases several other non-trivial diagrams: they should typeset exactly as `examples.pdf`. However I need to provide some documentation since, at the moment, changing the look of photon or gluon propagators require to know the TikZ implementation and then to dig the relevant information from TikZ documentation.
 
 
