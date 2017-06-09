@@ -25,15 +25,16 @@
             mark = at position .55 with {\arrow{>}}
         }
       },
-      photon/.style = {
+      photon/.style 2 args = {
         draw = black,
         decorate,
         decoration = {
           snake,
-          amplitude = 1mm,
-          segment length = 3mm
+          amplitude = #1,
+          segment length = #2
         }
       },
+      photon/.default={1mm}{1.62mm},
       gluon/.style = {
         draw = black,
         decorate,
