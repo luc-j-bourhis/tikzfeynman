@@ -28,7 +28,7 @@
 
 \begin{figure}
 \centering
-\begin{tikzpicture}[node distance=1cm,line width=1.2]
+\begin{tikzpicture}[node distance=1cm,thick]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
 \coordinate[vertex, right=of v2] (v3);
@@ -46,7 +46,7 @@
 \draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
 \draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
 \end{tikzpicture}
-\caption{The same diagram again but tweaking some options: the ``wavelength'' of one $Z$ propagator, and the thickness of all lines.}
+\caption{The same diagram again but tweaking some options: the ``wavelength'' of one $Z$ propagator, and the thickness of all lines. Thickness named options are: `ultra thin', `very thin', `thin', `semithick', `thick', `very thick', `ultra thick'. One may also specify a size with `line width=4.5pt' or `1mm' e.g.}
 \end{figure}
 
 \begin{figure}
@@ -74,7 +74,7 @@
 
 \begin{figure}
 \centering
-\begin{tikzpicture}[node distance=1cm]
+\begin{tikzpicture}[node distance=1cm,thick]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
 \coordinate[vertex, right=of v2] (v3);
