@@ -2,6 +2,9 @@
 \usepackage{tikzfeynman}
 
 \begin{document}
+
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -20,7 +23,11 @@
 \draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
 \draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
 \end{tikzpicture}
+\caption{Demonstrating fermion lines, fermion loops, gauge bosons.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm,line width=1.2]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -39,7 +46,11 @@
 \draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
 \draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
 \end{tikzpicture}
+\caption{The same diagram again but tweaking some options: the ``wavelength'' of one $Z$ propagator, and the thickness of all lines.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -58,7 +69,11 @@
 \draw[fermion] (v2) to[semiloop] node[midway, above=0.1cm]{$q$} (v3);
 \draw[fermion] (v3) to[semiloop] node[midway, below=0.1cm]{$q$} (v2);
 \end{tikzpicture}
+\caption{Demonstrating gluon lines.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -77,7 +92,11 @@
 \draw[gluon] (v2) to[semiloop] (v3);
 \draw[gluon] (v3) to[semiloop] (v2);
 \end{tikzpicture}
+\caption{Demonstrating gluon loops.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=2cm of v1] (v2);
@@ -96,7 +115,11 @@
 \draw[gluon] (v3) to[semiloop] (v4);
 \draw[gluon] (v4) to[semiloop] (v3);
 \end{tikzpicture}
+\caption{Demonstrating more complex layout.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=2cm of v1] (v2);
@@ -126,7 +149,11 @@
 \draw[photon] (v1a) to[arcloop, centre=v1] node[midway, left=0.1cm]{$\gamma$} (v1b);
 \draw[gluon]  (v2a) to[arcloop, centre=v2] node[midway, right=0.1cm]{g} (v2b);
 \end{tikzpicture}
+\caption{Demonstrating arcs.}
+\end{figure}
 
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1.5cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -137,9 +164,11 @@
 \draw[ghost] (v3) -- (v4);
 \draw[gluon] (v2) to[semiloop] (v3);
 \end{tikzpicture}
+\caption{Demonstrating 180$^\circ$ arc and ghost lines.}
+\end{figure}
 
-\vskip 2em
-
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=2cm]
 \coordinate[vertex] (v1);
 \coordinate[vertex, right=of v1] (v2);
@@ -156,9 +185,11 @@
 \draw[ghost] (v5) to[arcloop,centre=o] (v2);
 \draw[gluon] (v5) -- (v6);
 \end{tikzpicture}
+\caption{Demonstrating ghost loops with gluon insertions.}
+\end{figure}
 
-\newpage
-
+\begin{figure}
+\centering
 \begin{tikzpicture}[node distance=1.5cm]
 \coordinate[vertex] (g1);
 \coordinate[vertex, below=of g1] (g2);
@@ -181,5 +212,7 @@
 \draw[photon] (vttgam1) -- (gam1);
 \draw[photon] (vttgam2) -- (gam2);
 \end{tikzpicture}
+\caption{Demonstrating scalar.}
+\end{figure}
 
 \end{document}
