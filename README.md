@@ -1,3 +1,5 @@
+**I have just noticed that my package shares the same name as a package authored by Joshua Ellis, which is way more sophisticated and professionaly written than mine, not mentioning a well-written documentation, and the fact that it is part of a standard TeX Live distribution. To anybody who would happen to land on this page, I strongly recommend to use Joshua's package. **
+
 ## TikZ-Feynman
 
 This is a LaTeX package providing TikZ styles and hooks to typeset Feynman diagrams with an intuitive and easy syntax. For example,
