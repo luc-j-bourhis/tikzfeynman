@@ -35,16 +35,17 @@
         }
       },
       photon/.default={1mm}{1.62mm},
-      gluon/.style = {
+      gluon/.style n args = {3}{
         draw = black,
         decorate,
         decoration = {
           coil,
-          aspect = .5,
-          amplitude = 1mm,
-          segment length = 1mm
+          aspect = #1,
+          amplitude = #2,
+          segment length = #3
         }
       },
+      gluon/.default={.75}{1mm}{1.62mm},
       ghost/.style = {
         line width=1pt,
         line cap=round,
